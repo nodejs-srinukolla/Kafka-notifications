@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "dist" : "cd dist",
+    "dist": "cd dist",
     "start": "ng serve --prod --proxy-config proxy.conf.json -o",
     "build": "ng build",
     "build_prod": "ng build --prod",
@@ -31,6 +31,7 @@
     "@types/socket.io-client": "^1.4.32",
     "bootstrap4-plus-jquery": "^4.0.0-alpha.2.4",
     "core-js": "^2.5.4",
+    "hoek": "^5.0.3",
     "jquery": "^3.3.1",
     "ngx-bootstrap": "^3.0.0",
     "rxjs": "^6.0.0",
