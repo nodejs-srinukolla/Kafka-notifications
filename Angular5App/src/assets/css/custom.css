@@ -1,0 +1,36 @@
+.login{
+	margin-top: 5px;
+	margin-left: 15px;
+}
+.get-it a{
+	color:#fff;
+}
+.container_devices {
+    margin: 4rem;
+}
+.pt3rem{
+	padding-top: 3rem !important;
+}
+.pb3rem{
+	padding-bottom: 3rem !important;
+}
+.ml8rem{
+	margin-left: 8rem !important;
+}
+.device-bot-border{
+	border-bottom: 1px solid #777;
+	width:85.79% !important;
+}
+.device-left-border{
+	border-left: 1px solid #777;
+	height: 80px;
+	margin-left: 15%;
+	position: relative;
+	top: 21px;
+}
+.device-rig-border{
+	border-right: 1px solid #777;
+	height: 40px;
+	margin-right: 50%;
+	margin-bottom: 10px;
+}

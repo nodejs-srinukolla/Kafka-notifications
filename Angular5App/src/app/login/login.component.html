@@ -1,0 +1,23 @@
+<div class="container">
+  <div id="login-modal" class="modal-content">
+    <div class="modal-header">
+      <h4 id="login-modalLabel" class="modal-title">Login</h4>
+      <button type="button" data-dismiss="modal" aria-label="Close" class="close">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <label for="email">Email address:</label>
+          <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email" #ctrl="ngModel" required>
+        </div>
+        <div class="form-group">
+          <label for="pwd">Password:</label>
+          <input type="password" class="form-control" id="pwd" name="passowrd" [(ngModel)]="password" required>
+        </div>
+        <button class="btn  btn-template-outlined" (click)="login()">Login</button>
+      </form>
+    </div>
+  </div>
+</div>

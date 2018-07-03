@@ -1,0 +1,30 @@
+spring:
+    kafka:
+        bootstrap-servers: 192.168.56.101:9092
+        consumer:
+            group-id: notification-group
+            auto-offset-reset: earliest
+    data:
+        mongodb:
+            host: 192.168.56.101
+            port: 27017
+            database: notification-db
+            
+kafka:
+    topic:
+        notif: notif-topic
+        streamInput: streams-json-input
+        streamStore: streams-json-store
+        streamOutput: streams-json-output
+        
+notification:
+    server:
+        baseUrl: http://localhost:3000
+        triggerApi: /api/notifications/
+    data:
+        messageUrl: /#/messages/
+        icon: http://www.iconsplace.com/icons/preview/orange/bell-64.png
+    action:
+        action: explore
+        title: Visit Site
+        icon: https://www.freewebspace.net/wp-content/plugins/codecanyon-6463373-web-20-directory-plugin-for-wordpress/resources/images/categories_icons/checkmark.png        

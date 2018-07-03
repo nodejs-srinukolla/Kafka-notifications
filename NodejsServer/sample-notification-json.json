@@ -1,0 +1,19 @@
+{
+	title: 'ERSNewsletter',
+	body: 'NewsletterAvailableGuys!',
+	icon: 'http: //www.iconsplace.com/icons/preview/orange/bell-64.png',
+	data: {
+		dateOfArrival: Date.now(),
+		primaryKey: 1
+	},
+	actions: [{
+		action: 'explore',
+		title: 'VisitSite',
+		icon: 'https: //www.freewebspace.net/wp-content/plugins/codecanyon-6463373-web-20-directory-plugin-for-wordpress/resources/images/categories_icons/checkmark.png'
+	},
+	{
+		action: 'close',
+		title: 'CloseNotification',
+		icon: 'https: //78.media.tumblr.com/879585019daff77dc8e133de431da1f6/tumblr_inline_nl8j0pU1dR1ry72eo_75sq.png'
+	}]
+}

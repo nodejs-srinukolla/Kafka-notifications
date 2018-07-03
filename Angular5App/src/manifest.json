@@ -1,0 +1,36 @@
+{
+  "name": "Notification-Application",
+  "short_name": "Notification-Application",
+  "theme_color": "#1976d2",
+  "background_color": "#fafafa",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "assets/img/bell/bell-16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/bell/bell-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/bell/bell-64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/bell/bell-128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/bell/bell-256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ]
+}
