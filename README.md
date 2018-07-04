@@ -43,7 +43,7 @@ Frameworks and Softwares used in the application are :
    
 ## Installation
 
-##### Application Prerequisite :
+### Application Prerequisite :
 
 - [Node.js] - v8+ to run.
 - [Java] - v8+  
@@ -51,7 +51,7 @@ Frameworks and Softwares used in the application are :
 - [Apache ZooKeeper] - Running on :2181
 - [MongoDB] - Running in **replication** on :27017
 
-##### Scripts 
+### Scripts 
 
 ***_Start MongoDB in Replication:_**
 
@@ -133,6 +133,21 @@ $ npm run start_http
 $ http-server -c-1 --proxy http://localhost:3000 &
 $ disown
 ```
+
+### Test
+Hit the below REST API from Postman - REST Client 
+```sh
+POST http://localhost:8080/messages
+Content-Type: application/json
+
+Request Body:
+{
+"title" : "Event Approval Pending!", 
+"text" : "Event 123 pending for you approval", 
+"url" : "https://www.someurl.com/event/123"
+}
+```
+
 
 ### Todos
 
