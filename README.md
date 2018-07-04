@@ -41,34 +41,78 @@ Frameworks and Softwares used in the application are :
 * [Angular] - HTML enhanced for web apps!
 
    
-### Installation
+## Installation
 
-Application prerequisite :
+##### Application Prerequisite :
 
 - [Node.js] - v8+ to run.
-- [Java 8] - v8+  
+- [Java] - v8+  
 - [Apache Kafka] - Running on :9092
 - [Apache ZooKeeper] - Running on :2181
 - [MongoDB] - Running in **replication** on :27017
 
-Build and start the **Spring Boot Application**.
-_configure SpringBootApp\src\main\resources\application.yml for kafka and mongoDB host address._
+##### Scripts 
+
+***_Start MongoDB in Replication:_**
+
+```shh
+sudo /usr/bin/mongod --replSet rs0 --quiet --config /etc/mongod.conf &
+```
+
+***_Create MongoDB Database and required collections:_***
+```sh
+$ use notification-db
+$ db.createCollection("messages")
+$ db.createCollection("notifications")
+$ db.createCollection("subscribers")
+```
+
+***_Create Kafka Topic:_***
+```sh
+/bin/kafka-topics.sh --create \
+    --zookeeper <hostname>:<port> \
+    --topic <topic-name> \
+    --partitions <number-of-partitions> \
+    --replication-factor <number-of-replicating-servers>
+
+#example:
+sh /bin/kafka-topics.sh --create \
+    --zookeeper localhost:2181 \
+    --replication-factor 1 \
+    --partitions 1 \
+    --topic notif-topic
+	
+#check the kafka topic list
+sh /bin/kafka-topics.sh --list --zookeeper localhost:2181
+
+#Test with Console Producer and Consumer
+sh /bin/kafka-console-producer.sh --broker-list localhost:9092 --topic notif-topic
+sh /bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic notif-topic --from-beginning
+```
+
+
+**_Build and start the Spring Boot Application:_**
+_Before build configure **SpringBootApp\src\main\resources\application.yml** for kafka and mongoDB host address._
 ```sh
 $ cd SpringBootApp
 $ mvn clean install
 $ cd target
-$ java -jar notification-0.0.1-SNAPSHOT.jar
+$ nohup java -jar notification-0.0.1-SNAPSHOT.jar &
 ```
 
-Start the **NodeJS Express Application**.
+**_Start the NodeJS Express Application:_**
 
 ```sh
 $ cd NodejsServer
-$ npm run server / node server.js
+
+$ npm run server 
+#OR
+$ node server.js &
+$ disown
 ```
 
-Start the **Angular 5 Application**.
-
+**_Start the Angular 5 Application:_**
+_Before build configure **NodejsServer\config\database.config.js** for mongoDB host address and database name and replica set name_
 ```sh
 $ cd Angular5App
 
@@ -83,7 +127,11 @@ $ npm install -g http-server
 $ ng build --prod
 $ cp ngsw-worker.js dist/
 $ cd dist 
-$ npm run start_http / http-server -c-1 --proxy http://localhost:3000 &
+
+$ npm run start_http 
+#OR
+$ http-server -c-1 --proxy http://localhost:3000 &
+$ disown
 ```
 
 ### Todos
@@ -111,7 +159,7 @@ MIT
    [express]: <http://expressjs.com>
    [Mongoose]: <http://mongoosejs.com/>
    [Angular]: <https://angular.io/>
-   [Java 8]: <http://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html>
+   [Java]: <http://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html>
    [Maven]: <https://maven.apache.org/>
    
    
