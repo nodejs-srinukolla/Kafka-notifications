@@ -36,7 +36,7 @@ Frameworks and Softwares used in the application are :
 * [Apache ZooKeeper] - a centralized open-source server for maintaining and managing configuration information, naming conventions and synchronization for distributed cluster environment.
 * [MongoDB] - a NoSQL database
 * [node.js] - evented I/O for the backend
-* [express] - fast node.js network app framework [@tjholowaychuk]
+* [express] - fast node.js network app framework
 * [Mongoose] - a MongoDB object modeling tool designed to work in an asynchronous environment
 * [Angular] - HTML enhanced for web apps!
 
