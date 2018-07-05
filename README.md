@@ -25,6 +25,9 @@ The Application consists of the following components:
 ## Architecture Diagram
 [![N|Solid](https://github.com/ERS-HCL/Notifications/blob/master/Angular5App/src/assets/img/Notification_Architecture.png?raw=true)](#)
 
+## Data Flow Diagram
+[![N|Solid](https://github.com/ERS-HCL/Notifications/blob/master/Angular5App/src/assets/img/Notification_DFD.gif?raw=true)](#)
+
 ## Tech
 
 Frameworks and Softwares used in the application are :
